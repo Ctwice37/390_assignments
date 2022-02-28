@@ -6,8 +6,8 @@ public class prog2 {
    public static void main(String[] args) {
 
 
-     int x =  Professor_supplements_assignment_2.RandomNumbers.getRandomInt(1,9);
-     int y =  Professor_supplements_assignment_2.RandomNumbers.getRandomInt(3,14);
+     int x =  assignment_2.Professor_supplements_assignment_2.RandomNumbers.getRandomInt(1,9);
+     int y =  assignment_2.Professor_supplements_assignment_2.RandomNumbers.getRandomInt(3,14);
 
 
      double firstValue = Math.pow(Math.PI, x);

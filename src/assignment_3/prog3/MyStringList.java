@@ -44,9 +44,12 @@ public class MyStringList {
 	}
 	
 	public boolean remove(String s){
-		for(int i = 0; i < strArray.length; i++){
+		for(int i = 0; i < size; i++){
 			if(strArray[i].equals(s)){
-				strArray[i] = null;
+				for(int j = i; j < size; j++){
+					strArray[i] = strArray[i+1];
+				}
+				size--;
 				return true;
 			}
 		}
@@ -60,10 +63,16 @@ public class MyStringList {
 	}
 	public String toString(){
 
-		String s = "";
-		for(int i = 0; i < size-1; i++){
-			s += strArray[i];
+		String s = "[";
+		for(int i = 0; i < size; i++){
+			if(i != size -1) {
+				s += strArray[i] + ", ";
+				continue;
+			}
+			s+= strArray[i];
+
 		}
+		s += "]";
 
 		return s;
 	}

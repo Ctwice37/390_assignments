@@ -1,6 +1,6 @@
 package assignment_2;
 
-import Professor_supplements_assignment_2.RandomNumbers;
+import assignment_2.Professor_supplements_assignment_2.RandomNumbers;
 
 public class prog7 {
     public static void main(String[] args) {

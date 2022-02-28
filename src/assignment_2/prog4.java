@@ -1,6 +1,6 @@
 package assignment_2;
 
-import Professor_supplements_assignment_2.Data;
+import assignment_2.Professor_supplements_assignment_2.Data;
 
 
 public class prog4 {
