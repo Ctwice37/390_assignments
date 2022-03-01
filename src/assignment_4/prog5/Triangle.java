@@ -1,6 +1,7 @@
 package assignment_4.prog5;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public final class Triangle extends ClosedCurve implements Polygon {
 	/** base and height variables are defined so that height <= base */
@@ -80,12 +81,14 @@ public final class Triangle extends ClosedCurve implements Polygon {
 	}
 
 	@Override
-	public int getNumberOfSides() {
-		return 3;
+	public double[] getNumberOfSides() {
+		return new double[]{side1, side2, side3};
 	}
 
 	@Override
 	public double computePerimeter() {
 		return side1 + side2 + side3;
 	}
+
+
 }

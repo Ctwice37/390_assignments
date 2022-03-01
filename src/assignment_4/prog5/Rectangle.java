@@ -16,12 +16,8 @@ public class Rectangle extends ClosedCurve implements Polygon {
     }
 
     @Override
-    public int getNumberOfSides() {
-        return 4;
+    public double[] getNumberOfSides() {
+        return new double[]{width, width, height, height};
     }
 
-    @Override
-    public double computePerimeter() {
-        return 2*width + 2*height;
-    }
 }

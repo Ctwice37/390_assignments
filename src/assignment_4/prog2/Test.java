@@ -1,7 +1,5 @@
 package assignment_4.prog2;
 
-import assignment_4.prog2.Circle;
-import assignment_4.prog2.ClosedCurve;
 
 public class Test {
 	

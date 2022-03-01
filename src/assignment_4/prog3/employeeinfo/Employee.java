@@ -44,6 +44,7 @@ public class Employee {
 				checkingAcct.makeDeposit(amt);
 				break;
 			case SAVINGS:
+				Double balance = this.retirementAcct.getBalance();
 				savingsAcct.makeDeposit(amt);
 				break;
 			case RETIREMENT:
