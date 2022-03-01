@@ -22,7 +22,14 @@ public class Person {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if(obj == null)
+            return false;
+        if(obj.getClass() != this.getClass())
+            return false;
+        Person p = (Person) obj;
+
+
+        return (p.getName().equals(this.getName()) && p.getDateOfBirth().equals(this.getDateOfBirth())) ;
     }
 }
 
