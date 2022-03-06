@@ -6,5 +6,6 @@
 
 
 The Program will print "In SuperClass" infinitely until a stackOverflow occurs. This is due to
-the SuperClass calling the Child Class Constructor within its own constructor. Since the child class automatically invokes
-Parent constructor before its own creation - this will result in an infinite loop - a Child class object will not be created.
+the SuperClass calling the Child Class Constructor within its own constructor. Since the child class
+also will automatically invoke the Parent constructor (before its own creation), this will result in an infinite loop -
+because of the infinite loop and Stackoverflow, a Child class object will never get created.
