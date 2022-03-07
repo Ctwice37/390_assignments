@@ -22,8 +22,8 @@ public class PersonWithJob extends Person {
         if(obj.getClass() != this.getClass())
             return false;
         PersonWithJob p = (PersonWithJob) obj;
-        int x = (int)p.getSalary();
-        int y = (int)this.getSalary()
+        Double x = p.getSalary();
+        Double y = this.getSalary();
 
         return (p.getName().equals(this.getName()) && p.getDateOfBirth().equals(this.getDateOfBirth()) && x.equals(y)) ;
     }
