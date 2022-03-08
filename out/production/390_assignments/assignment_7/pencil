@@ -1,0 +1,18 @@
+
+
+
+1. Stackoverflow ,, the String will never meet the base-case condition
+ for being null. It will however become an empty string, which is not
+ equivalent to being null.
+
+2. Stackoverflow, the recursive call does not alter the input
+string such that it becomes smaller. It will be impossible to approach the base-case(s).
+Program will run indefinitely.
+
+3.
+
+line 12 -----> Object copy = new Enclosing().clone();
+
+
+4.
+
