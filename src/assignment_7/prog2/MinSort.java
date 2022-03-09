@@ -10,7 +10,6 @@ public class MinSort {
         StringBuilder sb = new StringBuilder();
         c = s.toCharArray();
 
-
         if(s.length() == 0)
             return "";
 

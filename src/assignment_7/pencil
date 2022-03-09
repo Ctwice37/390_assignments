@@ -14,5 +14,4 @@ Program will run indefinitely.
 line 12 -----> Object copy = new Enclosing().clone();
 
 
-4.
 
