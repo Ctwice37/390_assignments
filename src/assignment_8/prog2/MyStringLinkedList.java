@@ -79,6 +79,19 @@ public class MyStringLinkedList {
 		}
 		return result;			
 	}
+
+	//Unimplemented Methods
+	public void insert(String data, int pos){}
+	public boolean remove(String data){return false;}
+	public void MinSort(){};
+	public void swap(Node n1, Node n2){}
+	public Node minNode(Node head){return null;}
+
+
+
+
+
+
 	class Node {
 		String value;
 		Node next;

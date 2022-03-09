@@ -13,14 +13,35 @@ public class MyStringList {
 	/******* sorting methods ********/
 	public void minSort(){
 		//implement
+//		*******NOT CHANGED YET
+//		if(arr == null || arr.length <=1) return;
+//		int len = arr.length;
+//		int temp = 0;
+//		for(int i = 0; i < len; ++i){
+//			int nextMinPos = minpos(i,len-1);
+//			swap(i,nextMinPos);
+//		}
+
 	}
 	void swap(int i, int j){
 		//implement
+		String temp = strArray[i];
+		strArray[i] = strArray[j];
+		strArray[j] = temp;
 		
 	}
 	//find minimum of arr between the indices bottom and top
 	public int minpos(int bottom, int top){		
 		//implement
+//		*******NOT CHANGED YET
+//		int m = arr[bottom];
+//		int index = bottom;
+//		for(int i = bottom+1; i <= top; ++i){
+//			if(arr[i] < m){
+//				m = arr[i];
+//				index = i;
+//			}
+//		}
 		return -1;
 	}
 
@@ -31,6 +52,20 @@ public class MyStringList {
 	//search a sorted array
 	boolean binSearchIt(String val) {
 	    //implement
+//		*******NOT CHANGED YET
+//		if(arr == null || arr.length == 0) return false;
+//		int lower = 0;
+//		int upper = arr.length -1;
+//		while(true) {
+//			if(lower > upper) return false;
+//			int mid = (lower + upper)/2;
+//			if(x == arr[mid]) return true;
+//			if(x < arr[mid]) { //search left
+//				upper = mid - 1; //lower is not changed
+//			} else {   //x > arr[mid], search right
+//				lower = mid + 1;  //upper is not changed
+//			}
+//		}
 		return false;
 	}
 
@@ -115,6 +150,8 @@ public class MyStringList {
 		for(int i = 0; i < testArr.length; ++i) {
 			list.add(testArr[i]);
 		}
+
+
 		list.minSort();
 		System.out.println("The list in sorted order:");
 		System.out.println(list.toString());
