@@ -1,4 +1,4 @@
-package prog8_2_startup;
+package assignment_8.prog2;
 
 public class MyStringLinkedList {
 	Node header;
@@ -13,15 +13,15 @@ public class MyStringLinkedList {
 		//surrounding nodes
 		n.next = header.next;
 		n.previous = header;
-		
+
 		//establish links from surrounding 
 		//nodes to the new node
 		if(header.next != null){
 			header.next.previous = n;
-		}		
-		header.next = n;	
+		}
+		header.next = n;
 	}
-	
+
 	//adds to the end of the list
 	public void addLast(String item) {
 		Node n = new Node(item);
@@ -34,12 +34,12 @@ public class MyStringLinkedList {
         last.next = n;
         n.previous = last;
 	}
-	
+
 	//removes node in last position
 	public void removeLast( ) {
 		//if list is empty, return
 		if(header.next == null) return;
-		
+
 		Node current = header;
 		//traverse the list until current.next is 
 		//null - then remove current
@@ -47,12 +47,12 @@ public class MyStringLinkedList {
 			current = current.next;
 		}
 		//now current.next == null, so remove current
-		Node previous = current.previous; 
+		Node previous = current.previous;
 		//previous is not null since current is not header
 		previous.next = null;
 		current.previous = null;
 	}
-	
+
 	//determines whether the input string is in the list
 	public boolean search(String s) {
 		Node next = header.next;
@@ -65,7 +65,8 @@ public class MyStringLinkedList {
 			return true;
 		}
 	}
-	public String toString() { 
+
+	public String toString() {
 		var sb = new StringBuffer();
 		Node next = header.next;
 		while(next != null) {
@@ -77,11 +78,17 @@ public class MyStringLinkedList {
 		if(result.charAt(result.length()-1) == ',') {
 			return result.substring(0,result.length()-1);
 		}
-		return result;			
+		return result;
 	}
 
 	//Unimplemented Methods
-	public void insert(String data, int pos){}
+	public void insert(String data, int pos){
+
+
+	}
+
+
+
 	public boolean remove(String data){return false;}
 	public void MinSort(){};
 	public void swap(Node n1, Node n2){}
@@ -99,7 +106,7 @@ public class MyStringLinkedList {
 		Node(String value){
 			this.value = value;
 		}
-		
+
 		public String toString() {
 			return value == null ? "null" : value;
 		}

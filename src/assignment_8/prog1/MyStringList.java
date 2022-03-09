@@ -13,16 +13,19 @@ public class MyStringList {
 	/******* sorting methods ********/
 	public void minSort(){
 		//implement
-//		*******NOT CHANGED YET
-//		if(arr == null || arr.length <=1) return;
-//		int len = arr.length;
-//		int temp = 0;
-//		for(int i = 0; i < len; ++i){
-//			int nextMinPos = minpos(i,len-1);
-//			swap(i,nextMinPos);
-//		}
+		String[] arr = strArray;
+
+		if(arr == null || arr.length <=1) return;
+		int len = arr.length;
+		int temp = 0;
+		for(int i = 0; i <= len; ++i){
+			int nextMinPos = minpos(i,len);
+			swap(i,nextMinPos);
+		}
 
 	}
+
+
 	void swap(int i, int j){
 		//implement
 		String temp = strArray[i];
@@ -31,18 +34,21 @@ public class MyStringList {
 		
 	}
 	//find minimum of arr between the indices bottom and top
-	public int minpos(int bottom, int top){		
+	public int minpos(int bottom, int top){
 		//implement
-//		*******NOT CHANGED YET
-//		int m = arr[bottom];
-//		int index = bottom;
-//		for(int i = bottom+1; i <= top; ++i){
-//			if(arr[i] < m){
-//				m = arr[i];
-//				index = i;
-//			}
-//		}
-		return -1;
+		String[] arr = strArray;
+		String m = arr[bottom];
+		int index = bottom;
+		for(int i = bottom; i < top; i++){
+			System.out.println(arr[i]);
+			if(arr[i].compareTo(m) < 0){
+				m = arr[i];
+				index = i;
+			}
+		}
+		//return location of min, not the min itself
+		return index;
+
 	}
 
 	/********* end sorting methods ********/
@@ -125,7 +131,7 @@ public class MyStringList {
 	
 	
 	private void resize(){
-		System.out.println("resizing");
+		//System.out.println("resizing");
 		int len = strArray.length;
 		int newlen = 2*len;
 		String[] temp = new String[newlen];
@@ -145,13 +151,16 @@ public class MyStringList {
 	}
 
 	public static void main(String[] args){
-		String[] testArr = {"big", "small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
+		//String[] testArr = {"big", "small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
+		String[] testArr = {"small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
+
 		MyStringList list = new MyStringList();
 		for(int i = 0; i < testArr.length; ++i) {
 			list.add(testArr[i]);
 		}
 
-
+		System.out.println("The list in Pre-sorted order:");
+		System.out.println(list.toString());
 		list.minSort();
 		System.out.println("The list in sorted order:");
 		System.out.println(list.toString());
