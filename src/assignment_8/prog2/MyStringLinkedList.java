@@ -119,54 +119,43 @@ public class MyStringLinkedList {
 
 
     public void minSort() {
-//implement
+
         if (header.next == null || header.next.next == null) return;
+
         Node current = header.next;
-//        int len = arr.length;
-//        int temp = 0;
-//        for (int i = 0; i < len; ++i) {
+
         while(current != null){
+
             Node nextMinNode = minNode(current);
             swap(current, nextMinNode);
             current = current.next;
+
         }
     }
 
 
     public void swap(Node n1, Node n2) {
-        Node n1prevTemp = n1.previous;
-        Node n1nextTemp = n1.next;
-        Node n2prevTemp = n2.previous;
-        Node n2nextTemp = n2.next;
 
-        n1.next = n2nextTemp;
-        n1.previous = n2prevTemp;
-
-        n2.next = n1nextTemp;
-        n2.previous = n1prevTemp;
-
-
+        String temp = n1.value;
+        n1.value = n2.value;
+        n2.value = temp;
 
     }
 
     public Node minNode(Node head) {
-        if(head.next == null )
-            return null;
-        Node current = head.next;
-        Node target = current;
-        String min = head.next.value;
 
+        Node minNode = head;
+        String minValue = head.value;
 
-        while(current != null) {
-            if (current.value.compareTo(min) < 0) {
-                target = current;
-                min = target.value;
+        while(head != null) {
+            if (head.value.compareTo(minValue) < 0) {
+                minNode = head;
+                minValue = minNode.value;
             }
-            current = current.next;
+            head = head.next;
         }
-        return target;
+        return minNode;
     }
-
 
     class Node {
         String value;
@@ -184,16 +173,22 @@ public class MyStringLinkedList {
 
     public static void main(String[] args) {
         var list = new MyStringLinkedList();
-        list.addLast("Rich");
+       // list.addLast("Rich");
         //System.out.println(list);
         //list.removeLast();
         //System.out.println(list);
-        System.out.println("presorted");
+        System.out.println("Pre-Sorted");
         list.addFirst("Bob");
         list.addFirst("Harry");
         list.addFirst("Charles");
-        list.addFirst("Bob");
+        list.addFirst("Violin");
         list.addFirst("Zebra");
+//        list.addFirst("1");
+//        list.addFirst("2");
+//        list.addFirst("3");
+//        list.addFirst("5");
+
+
 
         //list.remove("Harry");
 
