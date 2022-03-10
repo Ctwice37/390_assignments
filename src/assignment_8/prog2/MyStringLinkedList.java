@@ -150,7 +150,7 @@ public class MyStringLinkedList {
     }
 
     public Node minNode(Node head) {
-        if(head.next == null)
+        if(head.next == null )
             return null;
         Node current = head.next;
         Node target = current;
