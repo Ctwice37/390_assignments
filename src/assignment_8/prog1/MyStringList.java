@@ -13,12 +13,12 @@ public class MyStringList {
 	/******* sorting methods ********/
 	public void minSort(){
 		//implement
-		String[] arr = strArray;
 
-		if(arr == null || arr.length <=1) return;
-		int len = arr.length;
-		int temp = 0;
-		for(int i = 0; i <= len; ++i){
+
+		if(strArray == null || size <=1) return;
+		int len = size;
+
+		for(int i = 0; i <= size; ++i){
 			int nextMinPos = minpos(i,len);
 			swap(i,nextMinPos);
 		}
@@ -36,13 +36,13 @@ public class MyStringList {
 	//find minimum of arr between the indices bottom and top
 	public int minpos(int bottom, int top){
 		//implement
-		String[] arr = strArray;
-		String m = arr[bottom];
+
+		String m = strArray[bottom];
 		int index = bottom;
 		for(int i = bottom; i < top; i++){
-			System.out.println(arr[i]);
-			if(arr[i].compareTo(m) < 0){
-				m = arr[i];
+			//System.out.println(strArray[i]);
+			if(strArray[i].compareTo(m) < 0){
+				m = strArray[i];
 				index = i;
 			}
 		}
@@ -133,8 +133,8 @@ public class MyStringList {
 	private void resize(){
 		//System.out.println("resizing");
 		int len = strArray.length;
-		int newlen = 2*len;
-		String[] temp = new String[newlen];
+		int newLen = 2*len;
+		String[] temp = new String[newLen];
 		System.arraycopy(strArray,0,temp,0,len);
 		strArray = temp;
 	}
@@ -151,8 +151,8 @@ public class MyStringList {
 	}
 
 	public static void main(String[] args){
-		//String[] testArr = {"big", "small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
-		String[] testArr = {"small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
+		String[] testArr = {"big", "small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
+		//String[] testArr = {"small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
 
 		MyStringList list = new MyStringList();
 		for(int i = 0; i < testArr.length; ++i) {
