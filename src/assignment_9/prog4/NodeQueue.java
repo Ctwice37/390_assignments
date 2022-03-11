@@ -12,9 +12,10 @@ public class NodeQueue {
 	 */
 	public void enqueue(String s) {
 		Node current = head;
-		if(head == null) {
+		if(current == null) {
 			head = new Node(s, null);
 			tail = head;
+			return;
 		}
 		while(current.next != null) {
 			current = current.next;
@@ -28,8 +29,10 @@ public class NodeQueue {
 	 */
 	public String dequeue() throws QueueException {
 		if(isEmpty()) throw new QueueException("Queue is empty!");
-		return null;
-		Node
+
+		String temp = head.data;
+		head = head.next;
+		return temp;
 	}	
 	/**
 	 * Returns value stored at the front of the queue
@@ -38,7 +41,7 @@ public class NodeQueue {
 	 */
 	public String peek() throws QueueException {
 		if(isEmpty()) throw new QueueException("Queue is empty!");
-		return null;
+		return head.data;
 	}
 	public boolean isEmpty() {
 		return head == null;
