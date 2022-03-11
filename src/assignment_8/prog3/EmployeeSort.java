@@ -16,9 +16,12 @@ public class EmployeeSort {
 			 new Employee("Dave", 50000, 2000, 1, 3),
 			 new Employee("Richard", 45000, 2001, 2, 7)};
 		List<Employee> empList = Arrays.asList(empArray);
-		NameComparator nameComp =
-			new NameComparator();
+		NameComparator nameComp = new NameComparator();
+		SalaryComparator salaryComp = new SalaryComparator();
+		HireDateComparator hireDateComp = new HireDateComparator();
 		Collections.sort(empList, nameComp);
+		Collections.sort(empList, salaryComp);
+		Collections.sort(empList, hireDateComp);
 		
 		System.out.println(empList);
 		
