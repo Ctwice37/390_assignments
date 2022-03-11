@@ -30,7 +30,7 @@ public class employeeBST {
         private Node right; // Right child
     }
 
-//    private void printTree(MyBST.Node t) {
+//    private void printTree(Node t) {
 //        if (t != null) {
 //            printTree(t.left);
 //            System.out.println(t.element);
@@ -41,13 +41,14 @@ public class employeeBST {
 
     public void insert(Employee emp) {
         if (root == null) {
-            root = new employeeBST(new NameComparator);
+            root = new Node(emp, null, null);
         }
         else {
-            MyBST n = root;
+            Node n = root;
             boolean inserted = false;
             while(!inserted){
-                if(x.compareTo(n.element)<0) {
+
+                if(emp.compare(n.emp)) {
                     //space found on the left
                     if(n.left == null){
                         n.left = new MyBST(emp,null,null);
