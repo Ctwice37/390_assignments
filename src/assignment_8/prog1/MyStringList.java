@@ -13,12 +13,12 @@ public class MyStringList {
 	/******* sorting methods ********/
 	public void minSort(){
 		//implement
-		String[] arr = strArray;
 
-		if(arr == null || arr.length <=1) return;
-		int len = arr.length;
-		int temp = 0;
-		for(int i = 0; i <= len; ++i){
+
+		if(strArray == null || strArray.length <=1) return;
+		int len = strArray.length-1;
+
+		for(int i = 0; i <= size; ++i){
 			int nextMinPos = minpos(i,len);
 			swap(i,nextMinPos);
 		}
@@ -36,13 +36,13 @@ public class MyStringList {
 	//find minimum of arr between the indices bottom and top
 	public int minpos(int bottom, int top){
 		//implement
-		String[] arr = strArray;
-		String m = arr[bottom];
+
+		String m = strArray[bottom];
 		int index = bottom;
-		for(int i = bottom; i < top; i++){
-			System.out.println(arr[i]);
-			if(arr[i].compareTo(m) < 0){
-				m = arr[i];
+		for(int i = bottom; i < size; i++){
+
+			if(strArray[i].compareTo(m) < 0){
+				m = strArray[i];
 				index = i;
 			}
 		}
@@ -164,9 +164,9 @@ public class MyStringList {
 		list.minSort();
 		System.out.println("The list in sorted order:");
 		System.out.println(list.toString());
-		System.out.println();
-		System.out.println("\"number\" is in the list? "+list.binSearchIt("number"));
-		System.out.println("\"tiny\" is in the list? "+list.binSearchIt("tiny"));
+//		System.out.println();
+//		System.out.println("\"number\" is in the list? "+list.binSearchIt("number"));
+//		System.out.println("\"tiny\" is in the list? "+list.binSearchIt("tiny"));
 	}
 
 }
