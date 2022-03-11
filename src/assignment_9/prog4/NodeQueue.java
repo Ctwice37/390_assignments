@@ -11,8 +11,17 @@ public class NodeQueue {
 	 * Inserts a new node containing s at end of queue
 	 */
 	public void enqueue(String s) {
-		//implement
-	}	
+		Node current = head;
+		if(head == null) {
+			head = new Node(s, null);
+			tail = head;
+		}
+		while(current.next != null) {
+			current = current.next;
+		}
+		current.next = new Node(s, null);
+		tail = current.next;
+	}
 	/**
 	 * Removes node from the front of the queue and returns its value if
 	 * head is n
@@ -20,6 +29,7 @@ public class NodeQueue {
 	public String dequeue() throws QueueException {
 		if(isEmpty()) throw new QueueException("Queue is empty!");
 		return null;
+		Node
 	}	
 	/**
 	 * Returns value stored at the front of the queue

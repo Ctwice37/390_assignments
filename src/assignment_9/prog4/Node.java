@@ -4,6 +4,11 @@ package assignment_9.prog4;
 public class Node {
 	String data;
 	Node next;
+
+	Node(String data, Node next){
+		this.data = data;
+		this.next = next;
+	}
 	
 	@Override
 	public String toString() {

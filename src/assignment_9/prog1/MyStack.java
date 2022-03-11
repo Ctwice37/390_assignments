@@ -9,6 +9,17 @@ public class MyStack {
     }
 
     public String pop() {
+        String s ;
+        if(list.size() == 0 || list.size() == 1) {
+            s = list.header.next.value;
+            list.header.next = null;
+            return s;
+
+        }else{
+            s = list.header.next.value;
+            list.header.next.next.previous = list.header;
+            list.header.next = list.header.next.next;
+        }return s;
 
     }
 
