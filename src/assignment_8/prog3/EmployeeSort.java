@@ -1,6 +1,5 @@
-package assignment_8.employeesort;
+package assignment_8.prog3;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +16,7 @@ public class EmployeeSort {
 			 new Employee("Dave", 50000, 2000, 1, 3),
 			 new Employee("Richard", 45000, 2001, 2, 7)};
 		List<Employee> empList = Arrays.asList(empArray);
-		NameComparator nameComp = 
+		NameComparator nameComp =
 			new NameComparator();
 		Collections.sort(empList, nameComp);
 		

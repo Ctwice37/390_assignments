@@ -15,8 +15,8 @@ public class MyStringList {
 		//implement
 
 
-		if(strArray == null || strArray.length <=1) return;
-		int len = strArray.length-1;
+		if(strArray == null || size <=1) return;
+		int len = size;
 
 		for(int i = 0; i <= size; ++i){
 			int nextMinPos = minpos(i,len);
@@ -39,8 +39,8 @@ public class MyStringList {
 
 		String m = strArray[bottom];
 		int index = bottom;
-		for(int i = bottom; i < size; i++){
-
+		for(int i = bottom; i < top; i++){
+			//System.out.println(strArray[i]);
 			if(strArray[i].compareTo(m) < 0){
 				m = strArray[i];
 				index = i;
@@ -133,8 +133,8 @@ public class MyStringList {
 	private void resize(){
 		//System.out.println("resizing");
 		int len = strArray.length;
-		int newlen = 2*len;
-		String[] temp = new String[newlen];
+		int newLen = 2*len;
+		String[] temp = new String[newLen];
 		System.arraycopy(strArray,0,temp,0,len);
 		strArray = temp;
 	}
@@ -151,8 +151,8 @@ public class MyStringList {
 	}
 
 	public static void main(String[] args){
-		//String[] testArr = {"big", "small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
-		String[] testArr = {"small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
+		String[] testArr = {"big", "small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
+		//String[] testArr = {"small", "tall", "short", "round", "square", "enormous", "tiny","gargantuan", "lilliputian", "numberless", "none", "vast", "miniscule"};
 
 		MyStringList list = new MyStringList();
 		for(int i = 0; i < testArr.length; ++i) {
@@ -164,9 +164,9 @@ public class MyStringList {
 		list.minSort();
 		System.out.println("The list in sorted order:");
 		System.out.println(list.toString());
-//		System.out.println();
-//		System.out.println("\"number\" is in the list? "+list.binSearchIt("number"));
-//		System.out.println("\"tiny\" is in the list? "+list.binSearchIt("tiny"));
+		System.out.println();
+		System.out.println("\"number\" is in the list? "+list.binSearchIt("number"));
+		System.out.println("\"tiny\" is in the list? "+list.binSearchIt("tiny"));
 	}
 
 }
