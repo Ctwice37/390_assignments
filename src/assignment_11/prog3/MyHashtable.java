@@ -50,8 +50,10 @@ public class MyHashtable implements Iterable {
     }
 
     public void put(Object key, Object value) {
+
         if (key == null) return;
-        if(loadFactor() >= 5)
+
+        if (this.loadFactor() >= 5)
             rehash();
         int hashcode = key.hashCode();
         int hash = hash(hashcode);
@@ -80,29 +82,30 @@ public class MyHashtable implements Iterable {
     private void rehash() {
         int newSize = tableSize * 2;
 
-
         LinkedList[] temp = new LinkedList[newSize];
 
         int index = 0;
-        //Entry e = null;
+        Entry e;
 
+        for (int i = 0; i < tableSize; i++) {
+            if (!(table[i] == null)) {
 
-        for (LinkedList s : table) {
-            if (!(s.isEmpty()))
-                while (s.iterator().hasNext()) {
+                Iterator it = table[i].iterator();
 
+                while (it.hasNext()) {
 
-                    index = hash(s.hashCode());
+                    e = (Entry) it.next();
+                    index = hash(e.key.hashCode());
 
-                    if (temp[index] == null)
-                        temp[index] = new LinkedList<>();
+                    if (temp[index] == null) {
+                        temp[index] = new LinkedList();
+                    }
 
-                    temp[index].add(s);
-
-                    s.iterator().next();
+                    temp[index].add(e);
 
                 }
-        } table = temp;
+            }
+        }  table = temp;
     }
 
     /**
@@ -247,26 +250,23 @@ public class MyHashtable implements Iterable {
 
     public static void main(String[] args) {
         MyHashtable h = new MyHashtable(4);
-//        for (int i = 0; i < 100; ++i) {
-//            h.put(i, i);
-//        }
-        for (int i = 0; i < 50; ++i) {
+        for (int i = 0; i < 100; ++i) {
             h.put(i, i);
         }
+
         System.out.println("table size: " + h.tableSize);
         System.out.println("number of entries: " + h.numEntries);
         System.out.println("load factor: " + h.loadFactor());
-//        for (int i = 0; i < 50; ++i) {
-//            h.remove(2 * i);
-//        }
-//        for (int i = 0; i < 33; ++i) {
-//            h.remove(3 * i);
-//        }
-//        for (int i = 0; i < 20; ++i) {
-//            h.remove(5 * i);
-//        }
+        for (int i = 0; i < 50; ++i) {
+            h.remove(2 * i);
+        }
+        for (int i = 0; i < 33; ++i) {
+            h.remove(3 * i);
+        }
+        for (int i = 0; i < 20; ++i) {
+            h.remove(5 * i);
+        }
         System.out.println(h);
-
     }
 
 
