@@ -53,7 +53,7 @@ public class MyHashtable implements Iterable {
 
         if (key == null) return;
 
-        if (this.loadFactor() >= 5)
+        if (this.loadFactor() >= maxLoadFactor)
             rehash();
         int hashcode = key.hashCode();
         int hash = hash(hashcode);
